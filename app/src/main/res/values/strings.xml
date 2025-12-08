@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FiguraGeometricaApp</string>
+    <string name="texto_equipe">Equipe: 1</string>
+    <string name="texto_aluno_1">Aluno 1: Alissa Gabriel</string>
+    <string name="texto_aluno_2">Aluno 2: Vinicius Cassemira</string>
+    <string name="texto_botao_iniciar">Iniciar</string>
+    <string name="texto_faculdade">Faculdade de Tecnologia de Jahu</string>
+    <string name="texto_ano">2025-2</string>
+    <string name="texto_imagem_fatec">Imagem Logo Fatec</string>
+    <string name="texto_imagem_cps">Imagem Logo CPS</string>
+    <string name="texto_imagem_dsm">Imagem Logo DSM</string>
+</resources>
