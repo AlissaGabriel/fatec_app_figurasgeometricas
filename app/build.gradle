@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'br.edu.fatecjahu.figurageometricaapp'
-    compileSdk = 36
+    compileSdk 36
 
     defaultConfig {
         applicationId "br.edu.fatecjahu.figurageometricaapp"
@@ -29,6 +29,7 @@ android {
 }
 
 dependencies {
+
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
