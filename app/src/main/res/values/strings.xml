@@ -9,4 +9,12 @@
     <string name="texto_imagem_fatec">Imagem Logo Fatec</string>
     <string name="texto_imagem_cps">Imagem Logo CPS</string>
     <string name="texto_imagem_dsm">Imagem Logo DSM</string>
+    <string name="texto_lado_1">Lado 1:</string>
+    <string name="texto_entre_com_lado_1">Entre com o Lado1.</string>
+    <string name="texto_lado_2">Lado 2:</string>
+    <string name="texto_entre_com_lado_2">Entre com o Lado2.</string>
+    <string name="texto_lado_3">Lado 3:</string>
+    <string name="texto_entre_com_lado_3">Entre com o Lado3.</string>
+    <string name="texto_botao_analisar">Analisar</string>
+
 </resources>
