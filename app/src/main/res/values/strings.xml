@@ -16,5 +16,11 @@
     <string name="texto_lado_3">Lado 3:</string>
     <string name="texto_entre_com_lado_3">Entre com o Lado3.</string>
     <string name="texto_botao_analisar">Analisar</string>
+    <string name="texto_resultado">Resultado:</string>
+    <string name="texto_lado_1.1">Lado 1 = </string>
+    <string name="texto_lado_2.2">Lado 2 = </string>
+    <string name="texto_lado_3.3">Lado 3 = </string>
+    <string name="texto_resultado_figura">A Figura Geométrica identificada é um: </string>
+    <string name="texto_botao_voltar">Voltar</string>
 
 </resources>

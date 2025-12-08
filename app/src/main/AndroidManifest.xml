@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FiguraGeometricaApp">
         <activity
+            android:name=".ResultadoActivity"
+            android:exported="false" />
+        <activity
             android:name=".EntradaActivity"
             android:exported="false" />
         <activity
