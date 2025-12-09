@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ResultadoActivity extends AppCompatActivity {
     TextView tvLado3, tvLado1Resultado, tvLado2Resultado, tvLado3Resultado, tvResultadoDaFigura, tvResultadoTriangulo;
+    TextView tvLado1Resultado2, tvLado2Resultado2, tvLado3Resultado2;
     ImageView ivResultadoDaFigura;
 
     private String descobrirFigura(int lado1, int lado2, int lado3) {
@@ -64,12 +65,19 @@ public class ResultadoActivity extends AppCompatActivity {
         tvResultadoTriangulo = findViewById(R.id.tvResultadoTriangulo);
         ivResultadoDaFigura = findViewById(R.id.ivResultadoDaFigura);
 
+        tvLado1Resultado2 = findViewById(R.id.tvLado1Resultado2);
+        tvLado2Resultado2 = findViewById(R.id.tvLado2Resultado2);
+        tvLado3Resultado2 = findViewById(R.id.tvLado3Resultado2);
+
         int lado1 = getIntent().getIntExtra("lado1", 0);
         int lado2 = getIntent().getIntExtra("lado2", 0);
         int lado3 = getIntent().getIntExtra("lado3", 0);
 
         tvLado1Resultado.setText(String.valueOf(lado1));
         tvLado2Resultado.setText(String.valueOf(lado2));
+
+        tvLado1Resultado2.setText(String.valueOf(lado1));
+        tvLado2Resultado2.setText(String.valueOf(lado2));
 
         String figura = descobrirFigura(lado1, lado2, lado3);
         tvResultadoDaFigura.setText(figura);
@@ -78,6 +86,7 @@ public class ResultadoActivity extends AppCompatActivity {
             tvLado3.setVisibility(View.VISIBLE);
             tvLado3Resultado.setVisibility(View.VISIBLE);
             tvLado3Resultado.setText(String.valueOf(lado3));
+            tvLado3Resultado2.setText(String.valueOf(lado3));
 
             String tipo = descobrirTipoTriangulo(lado1, lado2, lado3);
             tvResultadoTriangulo.setText(tipo);

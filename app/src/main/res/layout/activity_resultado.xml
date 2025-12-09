@@ -8,6 +8,17 @@
     tools:context=".ResultadoActivity">
 
     <TextView
+        android:id="@+id/tvLado1Resultado2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="117dp"
+        android:gravity="right|center_vertical"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
+        app:layout_constraintEnd_toStartOf="@+id/ivResultadoDaFigura" />
+
+    <TextView
         android:id="@+id/tvResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,6 +73,17 @@
         app:layout_constraintTop_toBottomOf="@+id/tvLado1Resultado" />
 
     <TextView
+        android:id="@+id/tvLado2Resultado2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivResultadoDaFigura" />
+
+    <TextView
         android:id="@+id/tvLado3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,6 +103,17 @@
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tvLado3"
         app:layout_constraintTop_toBottomOf="@+id/tvLado2Resultado" />
+
+    <TextView
+        android:id="@+id/tvLado3Resultado2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="117dp"
+        android:gravity="center|start|center_vertical"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
+        app:layout_constraintStart_toEndOf="@+id/ivResultadoDaFigura" />
 
     <TextView
         android:id="@+id/tvFiguraResultado"
