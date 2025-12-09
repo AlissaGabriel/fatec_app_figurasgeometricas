@@ -133,4 +133,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvResultadoTriangulo" />
+
+    <ImageView
+        android:id="@+id/ivResultadoDaFigura"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResultadoTriangulo"
+        app:srcCompat="@drawable/interrogacao" />
 </androidx.constraintlayout.widget.ConstraintLayout>

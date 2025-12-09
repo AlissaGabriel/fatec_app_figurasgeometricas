@@ -3,6 +3,7 @@ package br.edu.fatecjahu.figurageometricaapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,18 +14,23 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ResultadoActivity extends AppCompatActivity {
     TextView tvLado3, tvLado1Resultado, tvLado2Resultado, tvLado3Resultado, tvResultadoDaFigura, tvResultadoTriangulo;
+    ImageView ivResultadoDaFigura;
 
     private String descobrirFigura(int lado1, int lado2, int lado3) {
         if (lado3 > 0) {
+            ivResultadoDaFigura.setImageResource(R.drawable.triangulo);
             return "Triângulo";
         }
         if ((lado1 > 0 && lado2 == 0 && lado3 == 0) ||
                 (lado2 > 0 && lado1 == 0 && lado3 == 0)) {
+            ivResultadoDaFigura.setImageResource(R.drawable.quadrado);
             return "Quadrado";
         }
         if (lado1 == lado2) {
+            ivResultadoDaFigura.setImageResource(R.drawable.quadrado);
             return "Quadrado";
         } else {
+            ivResultadoDaFigura.setImageResource(R.drawable.retangulo);
             return "Retângulo";
         }
     }
@@ -56,6 +62,7 @@ public class ResultadoActivity extends AppCompatActivity {
         tvLado3 = findViewById(R.id.tvLado3);
         tvResultadoDaFigura = findViewById(R.id.tvResultadoDaFigura);
         tvResultadoTriangulo = findViewById(R.id.tvResultadoTriangulo);
+        ivResultadoDaFigura = findViewById(R.id.ivResultadoDaFigura);
 
         int lado1 = getIntent().getIntExtra("lado1", 0);
         int lado2 = getIntent().getIntExtra("lado2", 0);
