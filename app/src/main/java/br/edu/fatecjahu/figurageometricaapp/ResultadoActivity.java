@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Arrays;
+
 public class ResultadoActivity extends AppCompatActivity {
     TextView tvLado3, tvLado1Resultado, tvLado2Resultado, tvLado3Resultado, tvResultadoDaFigura, tvResultadoTriangulo;
     TextView tvLado1Resultado2, tvLado2Resultado2, tvLado3Resultado2;
@@ -19,8 +21,15 @@ public class ResultadoActivity extends AppCompatActivity {
 
     private String descobrirFigura(int lado1, int lado2, int lado3) {
         if (lado3 > 0) {
-            ivResultadoDaFigura.setImageResource(R.drawable.triangulo);
-            return "Triângulo";
+            String tipo = descobrirTipoTriangulo(lado1, lado2, lado3);
+
+            if (tipo.equals("Triângulo Equilátero")) {
+                ivResultadoDaFigura.setImageResource(R.drawable.equilatero);
+            } else if (tipo.equals("Triângulo Isósceles")) {
+                ivResultadoDaFigura.setImageResource(R.drawable.isosceles);
+            } else {
+                ivResultadoDaFigura.setImageResource(R.drawable.escaleno);
+            }            return "Triângulo";
         }
         if ((lado1 > 0 && lado2 == 0 && lado3 == 0) ||
                 (lado2 > 0 && lado1 == 0 && lado3 == 0)) {
@@ -73,6 +82,10 @@ public class ResultadoActivity extends AppCompatActivity {
         int lado2 = getIntent().getIntExtra("lado2", 0);
         int lado3 = getIntent().getIntExtra("lado3", 0);
 
+        if (lado1 > 0 && lado2 == 0) {
+            lado2 = lado1;
+        }
+
         tvLado1Resultado.setText(String.valueOf(lado1));
         tvLado2Resultado.setText(String.valueOf(lado2));
 
@@ -82,17 +95,49 @@ public class ResultadoActivity extends AppCompatActivity {
         String figura = descobrirFigura(lado1, lado2, lado3);
         tvResultadoDaFigura.setText(figura);
 
+        tvLado3.setVisibility(View.GONE);
+        tvLado3Resultado.setVisibility(View.GONE);
+
         if (figura.equals("Triângulo")) {
             tvLado3.setVisibility(View.VISIBLE);
             tvLado3Resultado.setVisibility(View.VISIBLE);
             tvLado3Resultado.setText(String.valueOf(lado3));
-            tvLado3Resultado2.setText(String.valueOf(lado3));
 
             String tipo = descobrirTipoTriangulo(lado1, lado2, lado3);
             tvResultadoTriangulo.setText(tipo);
+
+            if (lado1 == lado2 && lado2 == lado3) {
+                tvLado1Resultado2.setText(String.valueOf(lado1));
+                tvLado2Resultado2.setText(String.valueOf(lado2));
+                tvLado3Resultado2.setText(String.valueOf(lado3));
+
+            } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+                int igual, diferente;
+
+                if (lado1 == lado2) {
+                    igual = lado1;
+                    diferente = lado3;
+                } else if (lado1 == lado3) {
+                    igual = lado1;
+                    diferente = lado2;
+                } else {
+                    igual = lado2;
+                    diferente = lado1;
+                }
+
+                tvLado1Resultado2.setText(String.valueOf(igual));
+                tvLado2Resultado2.setText(String.valueOf(diferente));
+                tvLado3Resultado2.setText(String.valueOf(igual));
+
+
         } else {
-            tvLado3Resultado.setVisibility(View.GONE);
-            tvLado3.setVisibility(View.GONE);
+                int[] lados = {lado1, lado2, lado3};
+                Arrays.sort(lados);
+
+                tvLado1Resultado2.setText(String.valueOf(lados[1]));
+                tvLado2Resultado2.setText(String.valueOf(lados[0]));
+                tvLado3Resultado2.setText(String.valueOf(lados[2]));
+            }
         }
 
         Button btnVoltar = findViewById(R.id.btnVoltar);
